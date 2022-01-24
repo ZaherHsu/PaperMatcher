@@ -35,13 +35,13 @@ def adjust_format(contents):
 
 
 def match(look_qs, sample_qs, save_title=None):
-    '''
+    """
     匹配模拟题库和总题库的题目，保留模拟题库与正确答案的行数
     :param look_qs: 需要匹配的模拟题库
     :param sample_qs: 样本总题库
     :param save_title: 保留有模拟题库题目的总题库的行数列表
-    :return: 
-    '''
+    :return:
+    """
     if save_title is None:
         save_title = []
     for item in look_qs:
@@ -53,12 +53,12 @@ def match(look_qs, sample_qs, save_title=None):
 
 
 def get_equal_rate(str1, str2):
-    '''
+    """
     对比str1和str的相似度
     :param str1: 字符串1
     :param str2: 字符串2
     :return: 相似度
-    '''
+    """
     return difflib.SequenceMatcher(None, str1, str2).quick_ratio()
 
 
@@ -92,6 +92,7 @@ def main():
 
     # 保存为excel
     filtered_data.to_excel('filtered_data.xlsx')
+
 
 if __name__ == '__main__':
     main()
